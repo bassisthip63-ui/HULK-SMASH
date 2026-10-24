@@ -1,6 +1,6 @@
 # HULK-SMASH
 GTA IV  IMG Limit Adjuster
-# HULKSMASH 1.5
+# HULKSMASH 1.5.1
 
 **A streaming limit adjuster for GTA IV and Episodes from Liberty City.**
 
@@ -20,7 +20,7 @@ crash log that helps track down what went wrong when the game crashes.
 3. Start the game, then open `plugins\HULKSMASH.log`. It should say:
 
    ```
-   HULKSMASH 1.5
+   HULKSMASH 1.5.1
    ...
    OK: 1023 archives enabled (58 patches applied).
    ```
@@ -94,6 +94,13 @@ The crash log never changes or hides an exception: the game crashes, or carries 
 
 ## Changes
 
+### 1.5.1
+
+Same features and settings as 1.5. Only how the plugin is built changed, after antivirus programs wrongly flagged 1.5:
+- The small pieces of code HULKSMASH adds to the game are now written into normal memory first and only then made
+  executable (read-only). No memory is ever writable and executable at the same time.
+- The file now carries version information (product name, description, version) and a valid PE checksum.
+
 ### 1.5
 
 - **Fixed:** with `ReportUsage=1`, The Ballad of Gay Tony crashed (heap corruption) shortly after loading. 1.4
@@ -107,7 +114,7 @@ The crash log never changes or hides an exception: the game crashes, or carries 
 
 ## Building from source
 
-See `HULKSMASH_source_1.5.zip` (`SOURCE_NOTES.txt` inside).
+See `HULKSMASH_source_1.5.1.zip` (`SOURCE_NOTES.txt` inside).
 
 - **Windows:** install LLVM (`winget install LLVM.LLVM`), unzip to a short path such as `C:\HULKSMASH`, and run
   `build_win.cmd`.
